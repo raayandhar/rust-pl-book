@@ -1,7 +1,18 @@
+use std::cmp::Ordering;
 use std::io;
+
+use rand::Rng;
 
 fn main() {
    println!("Guess the number!");
+
+
+   // thread_rng is a RNG that is local to the current thread seeded by the OS
+   // gen_range defined by Rng trait with range stat..=end inclusive
+   let secret_number = rand::thread_rng().gen_range(1..=100);
+
+   println!("The secret number is: {secret_number}");
+
    println!("Please input your guess.");
 
    
@@ -29,4 +40,15 @@ fn main() {
    // {} works like Python almost except you don't need to specify that it's an f-string
    // e.g. can also do printlin!("x = {x} and y + 2 = {}", y + 2)
    println!("You guessed: {guess}");
+
+
+   // Ordering type is an enum
+   // cmp method compares two values and can be called on anything that can be compared
+   // will return one of the Ordering enum types and we match on that accordingly
+   match guess.cmp(&secret_number) {
+   	 Ordering::Less => println!("Too small!"),
+	 Ordering::Greater => println!("Too big!"),
+	 Ordering::Equal => println!("You win!"),
+   }
+
 }
