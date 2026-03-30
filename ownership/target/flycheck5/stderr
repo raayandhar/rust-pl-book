@@ -1,0 +1,54 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   0.225738917s  INFO prepare_target{force=false package_id=ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership) target="ownership"}: cargo::core::compiler::fingerprint: fingerprint error for ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership)/Check { test: false }/TargetInner { name: "ownership", doc: true, ..: with_path("/Users/raayandhar/Github/rust-pl-book/ownership/src/main.rs", Edition2024) }
+   0.225753834s  INFO prepare_target{force=false package_id=ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership) target="ownership"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/raayandhar/Github/rust-pl-book/ownership/target/debug/.fingerprint/ownership-5523b157836804f5/bin-ownership`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.229292834s  INFO prepare_target{force=false package_id=ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership) target="ownership"}: cargo::core::compiler::fingerprint: fingerprint error for ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership)/Check { test: true }/TargetInner { name: "ownership", doc: true, ..: with_path("/Users/raayandhar/Github/rust-pl-book/ownership/src/main.rs", Edition2024) }
+   0.229302125s  INFO prepare_target{force=false package_id=ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership) target="ownership"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/raayandhar/Github/rust-pl-book/ownership/target/debug/.fingerprint/ownership-4d2427870cf4bc6a/test-bin-ownership`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking ownership v0.1.0 (/Users/raayandhar/Github/rust-pl-book/ownership)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.35s
